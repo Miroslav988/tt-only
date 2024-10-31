@@ -1,0 +1,29 @@
+.mainCont {
+  position: relative;
+  margin: auto;
+  display: flex;
+  height: 100dvh;
+  max-width: 1440px;
+}
+body {
+  font-family: sans-serif;
+}
+.perp {
+  border: 0;
+  position: absolute;
+  left: 50%; /* Центрирование по горизонтали */
+  top: 0;
+  height: 100%; /* Задайте высоту линии */
+  width: 1px; /* Ширина вертикальной линии */
+  background-color: black; /* Цвет линии */
+  transform: translateX(-50%); /* Центрирование линии */
+}
+.par {
+  border: 0;
+  position: absolute;
+  top: 472px; /* Расстояние от верхнего края */
+  left: 0;
+  width: 100%; /* Ширина горизонтальной линии */
+  height: 1px; /* Высота горизонтальной линии */
+  background-color: black; /* Цвет линии */
+}
