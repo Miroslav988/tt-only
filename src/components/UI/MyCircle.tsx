@@ -11,9 +11,9 @@ const MyCircle: React.FC<MyCircleProps> = ({
   onActiveNameChange,
 }) => {
   const [rotation, setRotation] = useState(0);
-  const [btnName, setBtnName] = useState("");
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [activeName, setActiveName] = useState(false);
+  const [btnName, setBtnName] = useState("Литература");
+  const [activeIndex, setActiveIndex] = useState(3);
+  const [activeName, setActiveName] = useState(true);
   const handleClick = (index: number) => {
     let targetRotation = 0;
     targetRotation = 180 - index * 60 - targetRotation;
@@ -27,7 +27,7 @@ const MyCircle: React.FC<MyCircleProps> = ({
     }, 500);
   };
   return (
-    <>
+    <div className="cirlceCont">
       <p className={`btnText ${activeName ? "activeName" : ""}`}>{btnName}</p>
       <div className="circle" style={{ transform: `rotate(${rotation}deg)` }}>
         {buttonList.map((button, index) => {
@@ -51,7 +51,7 @@ const MyCircle: React.FC<MyCircleProps> = ({
           );
         })}
       </div>
-    </>
+    </div>
   );
 };
 

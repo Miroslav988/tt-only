@@ -11,8 +11,8 @@ export const news = [
   },
   {
     name: "Кино",
-    start: 1997,
-    end: 2001,
+    start: 2002,
+    end: 2007,
     newsArr: [
       "ndsbfnmdsbfnmdsm,c dsnfmd,snf,b sdfdsf",
       "dskfjdsfjkhdshjb dsfsdf dsfsd",
@@ -21,8 +21,8 @@ export const news = [
   },
   {
     name: "Литература",
-    start: 1997,
-    end: 2001,
+    start: 2007,
+    end: 2012,
     newsArr: [
       "ndsbfnmdsbfnmdsm,c dsnfmd,snf,b sdfdsf",
       "dskfjdsfjkhdshjb dsfsdf dsfsd",
@@ -31,8 +31,8 @@ export const news = [
   },
   {
     name: "Искусство",
-    start: 1997,
-    end: 2001,
+    start: 2012,
+    end: 2017,
     newsArr: [
       "ndsbfnmdsbfnmdsm,c dsnfmd,snf,b sdfdsf",
       "dskfjdsfjkhdshjb dsfsdf dsfsd",
@@ -41,8 +41,8 @@ export const news = [
   },
   {
     name: "Музыка",
-    start: 1997,
-    end: 2001,
+    start: 2017,
+    end: 2024,
     newsArr: [
       "ndsbfnmdsbfnmdsm,c dsnfmd,snf,b sdfdsf",
       "dskfjdsfjkhdshjb dsfsdf dsfsd",
@@ -51,8 +51,8 @@ export const news = [
   },
   {
     name: "Наука",
-    start: 1997,
-    end: 2001,
+    start: 2024,
+    end: 2029,
     newsArr: [
       "ndsbfnmdsbfnmdsm,c dsnfmd,snf,b sdfdsf",
       "dskfjdsfjkhdshjb dsfsdf dsfsd",

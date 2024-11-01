@@ -5,12 +5,17 @@
   border-radius: 50%;
   border: 1px solid #42567a;
   margin: auto;
-  margin-top: 215px;
   display: flex;
   justify-content: center;
   align-items: center;
   transform-origin: center;
   transition: transform 1s;
+}
+.cirlceCont {
+  display: flex;
+  position: absolute;
+  top: 215px;
+  left: 452px;
 }
 .item {
   z-index: 5;
@@ -43,8 +48,8 @@
   opacity: 0;
   color: #42567a;
   margin: 0;
-  top: 20%;
-  right: 30%;
+  top: 0%;
+  left: 85%;
   font-size: 20px;
   position: absolute;
   font-weight: 700;
