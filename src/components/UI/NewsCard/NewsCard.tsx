@@ -1,11 +1,13 @@
-import React from "react";
+import React, { FC } from "react";
 import "./NewsCard.scss";
+
 interface NewsCardProps {
-  newsDate: number;
-  newsContent: string;
-  style?: React.CSSProperties;
+  readonly newsDate: number;
+  readonly newsContent: string;
+  readonly style?: React.CSSProperties;
 }
-const NewsCard: React.FC<NewsCardProps> = ({ newsDate, newsContent }) => {
+
+const NewsCard: FC<NewsCardProps> = ({ newsDate, newsContent }) => {
   return (
     <div className="newsCont">
       <p className="newsDate">{newsDate}</p>

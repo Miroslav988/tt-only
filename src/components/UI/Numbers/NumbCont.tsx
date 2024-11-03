@@ -1,14 +1,20 @@
-import React from "react";
+import React, { FC } from "react";
 import "./NumbCont.scss";
+
 interface NumbContProps {
-  endNumb: number;
-  startNumb: number;
+  readonly startNumb: number;
+  readonly endNumb: number;
 }
-const NumbCont: React.FC<NumbContProps> = ({ startNumb, endNumb }) => {
+
+const NumbCont: FC<NumbContProps> = ({ startNumb, endNumb }) => {
   return (
     <div className="numbCont">
-      <span className="leftNumb">{startNumb}</span>
-      <span className="rightNumb">{endNumb}</span>
+      <span className="leftNumb" aria-label="Start year">
+        {startNumb}
+      </span>
+      <span className="rightNumb" aria-label="End year">
+        {endNumb}
+      </span>
     </div>
   );
 };

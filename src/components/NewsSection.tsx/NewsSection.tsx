@@ -1,26 +1,30 @@
-import React, { useEffect, useState } from "react";
+import React, { FC, useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
 import { Navigation } from "swiper/modules";
-import "swiper/swiper-bundle.css"; // Импортируйте стили Swiper
+import "swiper/css";
+import "swiper/swiper-bundle.css";
 import "./NewsSection.scss";
 import NewsCard from "../UI/NewsCard/NewsCard";
 
-interface NewsNewsSection {
-  startDate: number;
-  newsArr: string[];
+interface NewsSectionProps {
+  readonly startDate: number;
+  readonly newsArr: ReadonlyArray<string>;
 }
 
-const NewsSection: React.FC<NewsNewsSection> = ({ newsArr, startDate }) => {
-  const [animationClass, setAnimationClass] = useState("activeName");
+type AnimationClass = "" | "activeName";
+
+const NewsSection: FC<NewsSectionProps> = ({ newsArr, startDate }) => {
+  const [animationClass, setAnimationClass] =
+    useState<AnimationClass>("activeName");
 
   useEffect(() => {
     setAnimationClass("");
-    const timer = setTimeout(() => {
+    const timer: NodeJS.Timeout = setTimeout(() => {
       setAnimationClass("activeName");
     }, 500);
     return () => clearTimeout(timer);
   }, [newsArr]);
+
   return (
     <div className={`newsSection ${animationClass}`}>
       <Swiper
@@ -36,13 +40,13 @@ const NewsSection: React.FC<NewsNewsSection> = ({ newsArr, startDate }) => {
         initialSlide={0}
       >
         {newsArr.map((newsContent, index) => (
-          <SwiperSlide key={startDate + index}>
+          <SwiperSlide key={`${startDate}-${index}`}>
             <NewsCard newsDate={startDate + index} newsContent={newsContent} />
           </SwiperSlide>
         ))}
       </Swiper>
-      <div className="swiper-button-prev  button-prev"></div>
-      <div className="swiper-button-next  button-next"></div>
+      <div className="swiper-button-prev button-prev"></div>
+      <div className="swiper-button-next button-next"></div>
     </div>
   );
 };
