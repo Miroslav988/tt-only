@@ -13,7 +13,7 @@ const MyCircle: React.FC<MyCircleProps> = ({
 }) => {
   const [rotation, setRotation] = useState(0);
   const [btnName, setBtnName] = useState("");
-  const [activeIndex, setActiveIndex] = useState(1);
+  const [activeIndex, setActiveIndex] = useState(0);
   const [activeName, setActiveName] = useState(true);
   const handleClick = (index: number) => {
     let targetRotation = 0;

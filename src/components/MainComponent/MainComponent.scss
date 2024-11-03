@@ -1,6 +1,22 @@
 .scale {
   position: relative;
-  margin-top: calc(100dvh / 1080px * 170px);
+  margin-top: 170px; /* Начальное значение */
+}
+
+@media (max-height: 1000px) {
+  .scale {
+    margin-top: 127px; /* Уменьшение для высоты до 900px */
+  }
+}
+@media (max-height: 900px) {
+  .scale {
+    margin-top: 80px; /* Уменьшение для высоты до 900px */
+  }
+}
+@media (max-height: 800px) {
+  .scale {
+    margin-top: 0px; /* Уменьшение для высоты до 800px */
+  }
 }
 .mainCont {
   position: relative;
