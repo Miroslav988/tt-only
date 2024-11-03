@@ -3,9 +3,10 @@
   margin: auto;
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  width: 100%;
+  height: 100dvh;
+  width: 100vw;
   max-width: 1440px;
+  max-height: fit-content;
   border: 1px solid #42567a;
   box-sizing: border-box;
 }
@@ -17,6 +18,7 @@
   top: -10px;
   height: 100dvh; /* Задайте высоту линии */
   width: 1px; /* Ширина вертикальной линии */
+  opacity: 0.1;
   background-color: #42567a; /* Цвет линии */
 }
 .par {
@@ -25,8 +27,9 @@
   position: absolute;
   top: 472px; /* Расстояние от верхнего края */
   left: 0;
-  width: 100%; /* Ширина горизонтальной линии */
+  width: 100vw; /* Ширина горизонтальной линии */
   height: 1px; /* Высота горизонтальной линии */
+  opacity: 0.1;
   background-color: #42567a; /* Цвет линии */
 }
 .pageTitle {

@@ -6,6 +6,7 @@ import NumbCont from "../UI/Numbers/NumbCont";
 import NewsSection from "../NewsSection.tsx/NewsSection";
 const btns = news.map((item) => item.name);
 const MainComponent = () => {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [activeName, setActiveName] = useState("");
   const [startDate, setStartDate] = useState(2007);
   const [endDate, setEndDate] = useState(2012);
@@ -57,8 +58,13 @@ const MainComponent = () => {
       <hr className="perp" />
       <hr className="par" />
       <h1 className="pageTitle">Исторические даты</h1>
-      <MyCircle buttonList={btns} onActiveNameChange={handleActiveNameChange} />
-      <NumbCont startNumb={startDate} endNumb={endDate} />
+      <div className="scale">
+        <MyCircle
+          buttonList={btns}
+          onActiveNameChange={handleActiveNameChange}
+        />
+        <NumbCont startNumb={startDate} endNumb={endDate} />
+      </div>
       <NewsSection newsArr={newsArr} startDate={startDate} />
     </div>
   );
