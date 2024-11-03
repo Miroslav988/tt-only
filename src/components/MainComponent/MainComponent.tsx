@@ -57,15 +57,15 @@ const MainComponent = () => {
     <div className="mainCont">
       <hr className="perp" />
       <hr className="par" />
-      <h1 className="pageTitle">Исторические даты</h1>
       <div className="scale">
+        <h1 className="pageTitle">Исторические даты</h1>
         <MyCircle
           buttonList={btns}
           onActiveNameChange={handleActiveNameChange}
         />
         <NumbCont startNumb={startDate} endNumb={endDate} />
+        <NewsSection newsArr={newsArr} startDate={startDate} />
       </div>
-      <NewsSection newsArr={newsArr} startDate={startDate} />
     </div>
   );
 };
