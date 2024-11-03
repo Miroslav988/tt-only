@@ -3,14 +3,17 @@ import "./MainComponent.scss";
 import MyCircle from "../UI/MyCircle";
 import { news } from "../../News.js";
 import NumbCont from "../UI/Numbers/NumbCont";
+import NewsSection from "../NewsSection.tsx/NewsSection";
 const btns = news.map((item) => item.name);
 const MainComponent = () => {
   const [activeName, setActiveName] = useState("");
   const [startDate, setStartDate] = useState(2007);
   const [endDate, setEndDate] = useState(2012);
+  const [newsArr, setNewsArr] = useState<string[]>([]);
   const handleActiveNameChange = (name: string) => {
     const foundItem = news.find((item) => item.name === name);
     if (foundItem) {
+      setNewsArr(foundItem.newsArray);
       setActiveName(name);
       const targetStartDate = foundItem.start;
       const targetEndDate = foundItem.end;
@@ -56,6 +59,7 @@ const MainComponent = () => {
       <h1 className="pageTitle">Исторические даты</h1>
       <MyCircle buttonList={btns} onActiveNameChange={handleActiveNameChange} />
       <NumbCont startNumb={startDate} endNumb={endDate} />
+      <NewsSection newsArr={newsArr} startDate={startDate} />
     </div>
   );
 };

@@ -10,6 +10,7 @@
   align-items: center;
   transform-origin: center;
   transition: transform 1s;
+  z-index: 1;
 }
 .cirlceCont {
   display: flex;
@@ -18,7 +19,6 @@
   left: 452px;
 }
 .item {
-  z-index: 5;
   position: absolute;
   width: 6px;
   height: 6px;
@@ -29,6 +29,7 @@
   margin: 0;
   padding: 0;
   font-size: 0px;
+  z-index: 5;
 }
 .isActive,
 .item:hover {
