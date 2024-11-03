@@ -12,12 +12,6 @@
   transition: transform 1s;
   z-index: 1;
 }
-.cirlceCont {
-  display: flex;
-  position: absolute;
-  top: 52px;
-  left: 452px;
-}
 .item {
   position: absolute;
   width: 6px;
@@ -49,8 +43,8 @@
   opacity: 0;
   color: #42567a;
   margin: 0;
-  top: 0%;
-  left: 85%;
+  top: 15px;
+  left: 430px;
   font-size: 20px;
   position: absolute;
   font-weight: 700;

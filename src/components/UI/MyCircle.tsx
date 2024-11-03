@@ -37,7 +37,7 @@ const MyCircle: FC<MyCircleProps> = ({ buttonList, onActiveNameChange }) => {
   };
 
   return (
-    <div className="cirlceCont">
+    <>
       <p className={`btnText ${activeName ? "activeName" : ""}`}>{btnName}</p>
       <div className="circle" style={{ transform: `rotate(${rotation}deg)` }}>
         {buttonList.map((button, index: number) => {
@@ -67,7 +67,7 @@ const MyCircle: FC<MyCircleProps> = ({ buttonList, onActiveNameChange }) => {
         moveForward={moveForward}
         moveBackward={moveBackward}
       />
-    </div>
+    </>
   );
 };
 

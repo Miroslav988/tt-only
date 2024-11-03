@@ -1,11 +1,13 @@
 .newsSection {
   opacity: 0;
-  margin-top: 281px;
   margin-left: 80px;
   margin-right: 80px;
   height: fit-content;
   position: relative;
   cursor: grabbing;
+}
+.swiper-pagination {
+  display: none;
 }
 .newsSlider {
   display: flex;

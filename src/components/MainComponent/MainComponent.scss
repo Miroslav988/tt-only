@@ -1,23 +1,3 @@
-.scale {
-  position: relative;
-  margin-top: 170px; /* Начальное значение */
-}
-
-@media (max-height: 1000px) {
-  .scale {
-    margin-top: 127px; /* Уменьшение для высоты до 900px */
-  }
-}
-@media (max-height: 900px) {
-  .scale {
-    margin-top: 80px; /* Уменьшение для высоты до 900px */
-  }
-}
-@media (max-height: 800px) {
-  .scale {
-    margin-top: 0px; /* Уменьшение для высоты до 800px */
-  }
-}
 .mainCont {
   position: relative;
   margin: auto;
@@ -34,22 +14,38 @@
   border: 0;
   position: absolute;
   left: 50%; /* Центрирование по горизонтали */
-  top: -10px;
+  top: -50%;
   height: 100dvh; /* Задайте высоту линии */
   width: 1px; /* Ширина вертикальной линии */
   opacity: 0.1;
   background-color: #42567a; /* Цвет линии */
+  max-height: 1440px;
+}
+.circleNumbCont {
+  position: relative;
+  margin: auto;
+  margin-top: 215px;
+  margin-bottom: 56px;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
 }
 .par {
   z-index: -1;
   border: 0;
   position: absolute;
-  top: 480px; /* Расстояние от верхнего края */
-  left: 0;
-  width: 100vw; /* Ширина горизонтальной линии */
-  height: 1px; /* Высота горизонтальной линии */
+  top: 45%;
+  left: -85%;
+  width: 100vw;
+  max-width: 1440px;
+  height: 1px;
   opacity: 0.1;
-  background-color: #42567a; /* Цвет линии */
+  background-color: #42567a;
+}
+.pageTitleCont {
+  top: 170px;
+  left: 0;
+  position: absolute;
 }
 .pageTitle {
   position: relative;

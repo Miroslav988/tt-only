@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/swiper-bundle.css";
 import "./NewsSection.scss";
@@ -29,8 +29,9 @@ const NewsSection: FC<NewsSectionProps> = ({ newsArr, startDate }) => {
     <div className={`newsSection ${animationClass}`}>
       <Swiper
         key={startDate}
-        modules={[Navigation]}
+        modules={[Navigation, Pagination]}
         spaceBetween={80}
+        pagination
         navigation={{
           nextEl: ".button-next",
           prevEl: ".button-prev",
