@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./MyCircle.scss";
+import NavBtns from "./NavBtns/NavBtns";
 
 interface MyCircleProps {
   buttonList: string[];
@@ -26,6 +27,12 @@ const MyCircle: React.FC<MyCircleProps> = ({
       setActiveName(true);
     }, 500);
   };
+  const moveForward = () => {
+    handleClick(activeIndex + 1);
+  };
+  const moveBackward = () => {
+    handleClick(activeIndex - 1);
+  };
   return (
     <div className="cirlceCont">
       <p className={`btnText ${activeName ? "activeName" : ""}`}>{btnName}</p>
@@ -51,6 +58,12 @@ const MyCircle: React.FC<MyCircleProps> = ({
           );
         })}
       </div>
+      <NavBtns
+        list={buttonList}
+        currentIndex={activeIndex}
+        moveForward={moveForward}
+        moveBackward={moveBackward}
+      />
     </div>
   );
 };

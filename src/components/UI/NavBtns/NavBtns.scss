@@ -1,0 +1,33 @@
+.navBtnsCont {
+  position: absolute;
+  bottom: -44px;
+  left: -370px;
+  width: 120px;
+  height: 88px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.counter {
+  color: #42567a;
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: auto;
+}
+.navBtns {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.btn {
+  border: 1px solid #42567a80;
+  background-color: white;
+  box-sizing: border-box;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 25px;
+}
+:disabled {
+  opacity: 0.5;
+}
