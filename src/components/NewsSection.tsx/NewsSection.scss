@@ -1,3 +1,6 @@
+@import "../VarsScss/variables";
+@import "../VarsScss/mixins";
+
 .newsSection {
   opacity: 0;
   margin-left: 80px;
@@ -5,23 +8,20 @@
   height: fit-content;
   position: relative;
   cursor: grabbing;
-  @media (max-width: 351px) {
+  @media (max-width: 411px) {
     margin: 0;
     margin-left: 20px;
   }
-}
-.swiper-pagination {
-  display: none;
-}
-.newsSlider {
-  display: flex;
-  overflow: hidden;
 }
 .newsGroup {
   display: flex;
   transition: transform 0.5s ease;
 }
-
+.swiper-slide-next {
+  @media (max-width: 411px) {
+    opacity: 0.4;
+  }
+}
 .slider-button {
   background-color: #007bff;
   color: white;
@@ -31,12 +31,9 @@
   z-index: 1;
 }
 .swiper-slide {
-  max-width: 400px;
-  min-width: 320px;
-  @media (max-width: 351px) {
-    max-width: 255px;
-    min-width: 166px;
-    height: 114px;
+  width: 320px;
+  @media (max-width: 411px) {
+    width: 166px;
   }
 }
 .slider-button:hover {
@@ -49,6 +46,9 @@
 }
 .swiper-button-prev,
 .swiper-button-next {
+  @media (max-width: 411px) {
+    display: none;
+  }
   width: 40px;
   height: 40px;
   background-color: white;

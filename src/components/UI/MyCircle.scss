@@ -1,61 +1,109 @@
+@import "../VarsScss/variables";
+@import "../VarsScss/mixins";
+
 .circle {
   position: relative;
-  width: 530px;
-  height: 530px;
+  width: $circle-size;
+  height: $circle-size;
   border-radius: 50%;
-  border: 1px solid #42567a;
+  border: 1px solid $primary-color;
   margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flex-center;
   transform-origin: center;
   transition: transform 1s;
   z-index: 1;
-  @media (max-width: 351px) {
+
+  @include mobile {
     display: none;
   }
 }
+
 .item {
+  $dot-size: 6px;
+
   position: absolute;
-  width: 6px;
-  height: 6px;
-  border: none;
+  width: $dot-size;
+  height: $dot-size;
   border-radius: 50%;
   background-color: black;
-  color: white;
+  color: $white;
   margin: 0;
   padding: 0;
-  font-size: 0px;
+  font-size: 0;
   z-index: 5;
-}
-.isActive,
-.item:hover {
-  border: 1px solid #42567a;
-  background-color: white;
-  width: 56px;
-  height: 56px;
-  font-size: 20px;
-  transition: all 0.5s;
-}
-.btnNumb {
-  color: #42567a;
-  margin: 0;
-  padding: 0;
-}
-.btnText {
-  opacity: 0;
-  color: #42567a;
-  margin: 0;
-  top: 15px;
-  left: 430px;
-  font-size: 20px;
-  position: absolute;
-  font-weight: 700;
-  @media (max-width: 351px) {
-    display: none;
+  @include mobile {
+    border-radius: 50%;
+    background-color: #42567a;
+    opacity: 0.4;
+  }
+  &:hover,
+  &.isActive {
+    border: 1px solid $primary-color;
+    background-color: $white;
+    width: 56px;
+    height: 56px;
+    font-size: $main-font-size;
+    transition: $default-transition;
+    @include mobile {
+      opacity: 1;
+      width: $dot-size;
+      height: $dot-size;
+      background-color: #42567a;
+    }
   }
 }
-.activeName {
-  opacity: 1;
-  transition: all 1s;
+.buttons-container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  width: 100%;
+
+  @include mobile {
+    bottom: -305px;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+}
+
+.item {
+  $dot-size: 6px;
+  position: static;
+  width: $dot-size;
+  height: $dot-size;
+  border-radius: 50%;
+  background-color: black;
+  color: $white;
+  margin: 0;
+  padding: 0;
+  font-size: 0;
+  z-index: 5;
+}
+
+.btnNumb {
+  color: $primary-color;
+  margin: 0;
+  padding: 0;
+}
+
+.btnText {
+  $text-position: 15px;
+
+  opacity: 0;
+  color: $primary-color;
+  margin: 0;
+  top: $text-position;
+  left: 430px;
+  font-size: $main-font-size;
+  position: absolute;
+  font-weight: 700;
+  &.activeName {
+    opacity: 1;
+    transition: all 1s;
+  }
+  @include mobile {
+    display: none;
+  }
 }

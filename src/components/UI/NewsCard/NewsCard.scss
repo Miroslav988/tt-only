@@ -1,36 +1,42 @@
+@import "../../VarsScss/mixins";
+@import "../../VarsScss/variables";
+
 .newsCont {
   max-width: 400px;
-  min-width: 320px;
   height: 135px;
   pointer-events: none;
-  @media (max-width: 351px) {
-    max-width: 255px;
-    min-width: 166px;
-    height: 80px;
+
+  @include mobile {
+    max-width: 200px;
   }
 }
+
 .newsDate {
   font-size: 25px;
   font-weight: 400;
-  color: #3877ee;
+  color: $accent-blue;
   margin: 0;
   padding: 0;
   pointer-events: none;
-  @media (max-width: 351px) {
+
+  @include mobile {
     font-size: 16px;
     margin-top: 15px;
     margin-bottom: 20px;
   }
 }
+
 .newsContent {
   pointer-events: none;
   margin: 0;
   margin-top: 15px;
-  font-size: 20px;
+  font-size: $main-font-size;
   font-weight: 400;
   line-height: 30px;
-  color: #42567a;
-  @media (max-width: 351px) {
+  color: $primary-color;
+
+  @include mobile {
     line-height: 20px;
+    font-size: 14px;
   }
 }

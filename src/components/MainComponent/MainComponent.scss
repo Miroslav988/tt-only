@@ -1,3 +1,6 @@
+@import "../VarsScss/variables";
+@import "../VarsScss/mixins";
+
 .mainCont {
   position: relative;
   margin: auto;
@@ -6,24 +9,27 @@
   height: 100dvh;
   width: 100vw;
   max-width: 1440px;
-  border: 1px solid #42567a;
+  border: 1px solid $primary-color;
   box-sizing: border-box;
 }
+
 .perp {
   z-index: -1;
   border: 0;
   position: absolute;
-  left: 50%; /* Центрирование по горизонтали */
+  left: 50%;
   top: -50%;
-  height: 100dvh; /* Задайте высоту линии */
-  width: 1px; /* Ширина вертикальной линии */
+  height: 100dvh;
+  width: 1px;
   opacity: 0.1;
-  background-color: #42567a; /* Цвет линии */
+  background-color: $primary-color;
   max-height: 1440px;
-  @media (max-width: 351px) {
+
+  @include mobile {
     display: none;
   }
 }
+
 .circleNumbCont {
   position: relative;
   margin: auto;
@@ -32,61 +38,62 @@
   width: fit-content;
   display: flex;
   flex-direction: column;
-  @media (max-width: 351px) {
+
+  @include mobile {
     margin-top: 168px;
     width: 100vw;
     height: 73px;
   }
 }
+
 .par {
-  z-index: -1;
-  border: 0;
-  position: absolute;
+  @extend .perp;
   top: 45%;
   left: -85%;
   width: 100vw;
   max-width: 1440px;
   height: 1px;
-  opacity: 0.1;
-  background-color: #42567a;
-  @media (max-width: 351px) {
-    display: none;
-  }
 }
+
 .pageTitleCont {
   top: 170px;
   left: 0;
   position: absolute;
-  @media (max-width: 351px) {
+
+  @include mobile {
     top: 59px;
     left: 20px;
   }
 }
+
 .pageTitle {
   position: relative;
   width: 353px;
   height: 134px;
   padding-left: 78px;
   margin: 0;
-  font-size: 56px;
+  font-size: $large-font-size;
   line-height: 67px;
-  color: #42567a;
-  @media (max-width: 351px) {
+  color: $primary-color;
+
+  @include mobile {
     width: 123px;
     height: 48px;
     font-size: 20px;
     padding-left: 0;
     line-height: 24px;
   }
-}
-.pageTitle::before {
-  content: "";
-  position: absolute;
-  left: 0px;
-  height: 100%; /* Высота границы */
-  width: 5px; /* Ширина границы */
-  background: linear-gradient(180deg, #3877ee -5%, #ef5da8 85%);
-  @media (max-width: 351px) {
-    display: none;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0px;
+    height: 100%;
+    width: 5px;
+    @include gradient-line;
+
+    @include mobile {
+      display: none;
+    }
   }
 }

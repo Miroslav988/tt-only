@@ -1,3 +1,6 @@
+@import "../../VarsScss/mixins";
+@import "../../VarsScss/variables";
+
 .numbCont {
   position: absolute;
   display: flex;
@@ -10,7 +13,8 @@
   font-weight: 700;
   align-items: center;
   pointer-events: none;
-  @media (max-width: 351px) {
+
+  @include mobile {
     width: fit-content;
     font-size: 56px;
     height: 73px;
@@ -21,11 +25,13 @@
     border-bottom: 1px solid #c7cdd9;
   }
 }
+
 .leftNumb {
   letter-spacing: -0.02em;
-  color: #5d5fef;
+  color: $accent-blue;
 }
+
 .rightNumb {
   letter-spacing: -0.02em;
-  color: #ef5da8;
+  color: $accent-pink;
 }

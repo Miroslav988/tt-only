@@ -16,6 +16,28 @@ type AnimationClass = "" | "activeName";
 const NewsSection: FC<NewsSectionProps> = ({ newsArr, startDate }) => {
   const [animationClass, setAnimationClass] =
     useState<AnimationClass>("activeName");
+  const [spaceBetween, setSpaceBetween] = useState<number>(80);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 600) {
+        setSpaceBetween(20); // Уменьшите значение для мобильных устройств
+      } else {
+        setSpaceBetween(80); // Установите значение по умолчанию
+      }
+    };
+
+    // Установите начальное значение
+    handleResize();
+
+    // Добавьте обработчик события
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      // Удалите обработчик события при размонтировании
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   useEffect(() => {
     setAnimationClass("");
@@ -30,8 +52,7 @@ const NewsSection: FC<NewsSectionProps> = ({ newsArr, startDate }) => {
       <Swiper
         key={startDate}
         modules={[Navigation, Pagination]}
-        spaceBetween={80}
-        pagination
+        spaceBetween={spaceBetween}
         navigation={{
           nextEl: ".button-next",
           prevEl: ".button-prev",
