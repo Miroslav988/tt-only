@@ -3,8 +3,8 @@
 
 .newsSection {
   opacity: 0;
-  margin-left: 80px;
-  margin-right: 80px;
+  margin-left: clamp(20px, 5vw, 80px);
+  margin-right: clamp(20px, 5vw, 80px);
   height: fit-content;
   position: relative;
   cursor: grabbing;
@@ -36,7 +36,7 @@
   z-index: 1;
 }
 .swiper-slide {
-  width: 320px;
+  width: clamp(166px, 25vw, 320px);
   @media (max-width: 411px) {
     width: 166px;
     &:last-child {
@@ -57,8 +57,8 @@
   @media (max-width: 411px) {
     display: none;
   }
-  width: 40px;
-  height: 40px;
+  width: clamp(30px, 3vw, 40px);
+  height: clamp(30px, 3vw, 40px);
   background-color: white;
   border-radius: 50%;
   box-shadow: 0px 0px 15px 0px #3877ee1a;

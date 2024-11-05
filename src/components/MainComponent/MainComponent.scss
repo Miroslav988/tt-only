@@ -3,7 +3,7 @@
 
 .mainCont {
   position: relative;
-  margin: auto;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   height: 100dvh;
@@ -36,8 +36,8 @@
 .circleNumbCont {
   position: relative;
   margin: auto;
-  margin-top: 215px;
-  margin-bottom: 56px;
+  margin-top: clamp(168px, 15vw, 215px);
+  margin-bottom: clamp(30px, 4vw, 56px);
   width: fit-content;
   display: flex;
   flex-direction: column;
@@ -59,10 +59,9 @@
 }
 
 .pageTitleCont {
-  top: 170px;
-  left: 0;
+  top: clamp(59px, 12vw, 170px);
+  left: 0px;
   position: absolute;
-
   @include mobile {
     top: 59px;
     left: 20px;
@@ -71,18 +70,19 @@
 
 .pageTitle {
   position: relative;
-  width: 353px;
-  height: 134px;
-  padding-left: 78px;
+  width: clamp(123px, 30vw, 353px);
+  height: clamp(48px, 12vw, 134px);
+  padding-left: clamp(0px, 5vw, 78px);
+  line-height: clamp(24px, 5vw, 67px);
   margin: 0;
   font-size: $large-font-size;
-  line-height: 67px;
   color: $primary-color;
-
+  @media (max-width: 411px) {
+    font-size: 20px;
+  }
   @include mobile {
     width: 123px;
     height: 48px;
-    font-size: 20px;
     padding-left: 0;
     line-height: 24px;
   }

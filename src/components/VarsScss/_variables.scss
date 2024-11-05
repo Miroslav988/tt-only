@@ -6,17 +6,16 @@ $white: #ffffff;
 $border-color: rgba(66, 86, 122, 0.5);
 
 // Breakpoints
-$mobile-breakpoint: 411px;
+$mobile-breakpoint: 1024px;
 
 // Dimensions
 $circle-size: 530px;
-$button-size: 50px;
+$button-size: clamp(25px, 3vw, 50px);
 $mobile-button-size: 25px;
-
 // Typography
-$main-font-size: 20px;
-$large-font-size: 56px;
-$small-font-size: 14px;
+$main-font-size: clamp(14px, 1.5vw, 20px);
+$large-font-size: clamp(20px, 4vw, 56px);
+$small-font-size: clamp(12px, 1vw, 14px);
 
 // Transitions
 $default-transition: all 0.5s ease;

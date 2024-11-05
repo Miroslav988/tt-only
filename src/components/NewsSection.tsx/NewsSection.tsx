@@ -21,20 +21,17 @@ const NewsSection: FC<NewsSectionProps> = ({ newsArr, startDate }) => {
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 600) {
-        setSpaceBetween(20); // Уменьшите значение для мобильных устройств
+        setSpaceBetween(20);
       } else {
-        setSpaceBetween(80); // Установите значение по умолчанию
+        setSpaceBetween(80);
       }
     };
 
-    // Установите начальное значение
     handleResize();
 
-    // Добавьте обработчик события
     window.addEventListener("resize", handleResize);
 
     return () => {
-      // Удалите обработчик события при размонтировании
       window.removeEventListener("resize", handleResize);
     };
   }, []);

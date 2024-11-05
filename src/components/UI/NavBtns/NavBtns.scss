@@ -3,7 +3,7 @@
 
 .navBtnsCont {
   margin-left: -372px;
-  margin-top: -44px;
+  margin-top: clamp(-25px, -3vw, -44px);
   width: 120px;
   height: 88px;
   display: flex;
@@ -12,10 +12,10 @@
 
   @include mobile {
     margin: 0;
-    margin-top: 330px;
+    margin-top: 320px;
+    margin-left: 20px;
     width: 58px;
     height: 50px;
-    margin-left: 20px;
   }
 }
 
@@ -36,10 +36,10 @@
   border: 1px solid $border-color;
   background-color: $white;
   box-sizing: border-box;
-  width: $button-size;
-  height: $button-size;
+  width: 50px;
+  height: 50px;
+  font-size: clamp(15px, 2vw, 25px);
   border-radius: 50%;
-  font-size: 25px;
 
   @include mobile {
     width: $mobile-button-size;

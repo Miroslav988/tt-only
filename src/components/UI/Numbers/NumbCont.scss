@@ -4,24 +4,25 @@
 .numbCont {
   position: absolute;
   display: flex;
-  gap: 89px;
+  gap: clamp(28px, 6vw, 89px);
+  height: clamp(73px, 15vw, 160px);
+  top: clamp(0px, 15vw, 185px);
+  left: clamp(-217px, -15vw, -217px);
+  font-size: clamp(56px, 15vw, 200px);
   width: 100%;
-  height: 160px;
-  top: 185px;
-  left: -217px;
-  font-size: 200px;
   font-weight: 700;
   align-items: center;
   pointer-events: none;
-
+  @media (max-width: 411px) {
+    font-size: 56px;
+  }
   @include mobile {
     width: fit-content;
-    font-size: 56px;
     height: 73px;
     gap: 28px;
     top: 0;
     left: 20px;
-    padding-bottom: 58px;
+    padding-bottom: clamp(30px, 5vw, 58px);
     border-bottom: 1px solid #c7cdd9;
   }
 }

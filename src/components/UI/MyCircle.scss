@@ -3,8 +3,8 @@
 
 .circle {
   position: relative;
-  width: $circle-size;
-  height: $circle-size;
+  width: clamp(300px, 40vw, 530px);
+  height: clamp(300px, 40vw, 530px);
   border-radius: 50%;
   border: 1px solid $primary-color;
   margin: auto;
@@ -44,8 +44,8 @@
   &.isActive {
     border: 1px solid $primary-color;
     background-color: $white;
-    width: 56px;
-    height: 56px;
+    width: clamp(30px, 4vw, 56px);
+    height: clamp(30px, 4vw, 56px);
     font-size: $main-font-size;
     transition: $default-transition;
     -webkit-transition: all 0.5s ease;
@@ -64,12 +64,12 @@
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 20px;
+  gap: clamp(10px, 1.5vw, 20px);
   justify-content: center;
   width: 100%;
 
   @include mobile {
-    bottom: -305px;
+    bottom: calc(-49vh);
     gap: 10px;
     flex-wrap: wrap;
   }
@@ -91,7 +91,7 @@
   margin: 0;
   top: $text-position;
   left: 430px;
-  font-size: $main-font-size;
+  font-size: clamp(16px, 1.5vw, 20px);
   position: absolute;
   font-weight: 700;
   &.activeName {
