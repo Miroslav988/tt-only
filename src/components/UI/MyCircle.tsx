@@ -15,9 +15,8 @@ const MyCircle: FC<MyCircleProps> = ({ buttonList, onActiveNameChange }) => {
   const [btnName, setBtnName] = useState<string>("");
   const [activeIndex, setActiveIndex] = useState<ButtonIndex>(0);
   const [activeName, setActiveName] = useState<boolean>(true);
-  const [isMobile, setIsMobile] = useState<boolean>(false);
   const handleClick = (index: ButtonIndex): void => {
-    if (!isMobile) {
+    if (window.innerWidth > 411) {
       const targetRotation: Rotation = 180 - index * (360 / buttonList.length);
       setRotation(targetRotation);
     }
@@ -40,7 +39,7 @@ const MyCircle: FC<MyCircleProps> = ({ buttonList, onActiveNameChange }) => {
 
   return (
     <>
-      {!isMobile && (
+      {window.innerWidth > 411 && (
         <>
           <p className={`btnText ${activeName ? "activeName" : ""}`}>
             {btnName}
@@ -75,7 +74,10 @@ const MyCircle: FC<MyCircleProps> = ({ buttonList, onActiveNameChange }) => {
           </div>
         </>
       )}
-      <div className="buttons-container">
+      <div
+        className="buttons-container"
+        style={{ display: window.innerWidth < 411 ? "flex" : "none" }}
+      >
         {buttonList.map((button, index: number) => (
           <button
             key={index}
