@@ -36,9 +36,11 @@
   z-index: 1;
 }
 .swiper-slide {
-  width: clamp(166px, 25vw, 320px);
+  width: 320px;
+  display: flex;
   @media (max-width: 411px) {
     width: 166px;
+    height: fit-content;
     &:last-child {
       margin-right: calc(100% - 166px);
     }
