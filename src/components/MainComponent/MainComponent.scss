@@ -20,6 +20,9 @@
   opacity: 0.1;
   background-color: #42567a; /* Цвет линии */
   max-height: 1440px;
+  @media (max-width: 351px) {
+    display: none;
+  }
 }
 .circleNumbCont {
   position: relative;
@@ -29,6 +32,11 @@
   width: fit-content;
   display: flex;
   flex-direction: column;
+  @media (max-width: 351px) {
+    margin-top: 168px;
+    width: 100vw;
+    height: 73px;
+  }
 }
 .par {
   z-index: -1;
@@ -41,11 +49,18 @@
   height: 1px;
   opacity: 0.1;
   background-color: #42567a;
+  @media (max-width: 351px) {
+    display: none;
+  }
 }
 .pageTitleCont {
   top: 170px;
   left: 0;
   position: absolute;
+  @media (max-width: 351px) {
+    top: 59px;
+    left: 20px;
+  }
 }
 .pageTitle {
   position: relative;
@@ -56,6 +71,13 @@
   font-size: 56px;
   line-height: 67px;
   color: #42567a;
+  @media (max-width: 351px) {
+    width: 123px;
+    height: 48px;
+    font-size: 20px;
+    padding-left: 0;
+    line-height: 24px;
+  }
 }
 .pageTitle::before {
   content: "";
@@ -64,4 +86,7 @@
   height: 100%; /* Высота границы */
   width: 5px; /* Ширина границы */
   background: linear-gradient(180deg, #3877ee -5%, #ef5da8 85%);
+  @media (max-width: 351px) {
+    display: none;
+  }
 }

@@ -11,6 +11,9 @@
   transform-origin: center;
   transition: transform 1s;
   z-index: 1;
+  @media (max-width: 351px) {
+    display: none;
+  }
 }
 .item {
   position: absolute;
@@ -48,6 +51,9 @@
   font-size: 20px;
   position: absolute;
   font-weight: 700;
+  @media (max-width: 351px) {
+    display: none;
+  }
 }
 .activeName {
   opacity: 1;

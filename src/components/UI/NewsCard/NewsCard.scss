@@ -3,6 +3,11 @@
   min-width: 320px;
   height: 135px;
   pointer-events: none;
+  @media (max-width: 351px) {
+    max-width: 255px;
+    min-width: 166px;
+    height: 80px;
+  }
 }
 .newsDate {
   font-size: 25px;
@@ -11,6 +16,11 @@
   margin: 0;
   padding: 0;
   pointer-events: none;
+  @media (max-width: 351px) {
+    font-size: 16px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+  }
 }
 .newsContent {
   pointer-events: none;
@@ -20,4 +30,7 @@
   font-weight: 400;
   line-height: 30px;
   color: #42567a;
+  @media (max-width: 351px) {
+    line-height: 20px;
+  }
 }

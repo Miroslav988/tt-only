@@ -5,6 +5,10 @@
   height: fit-content;
   position: relative;
   cursor: grabbing;
+  @media (max-width: 351px) {
+    margin: 0;
+    margin-left: 20px;
+  }
 }
 .swiper-pagination {
   display: none;
@@ -29,6 +33,11 @@
 .swiper-slide {
   max-width: 400px;
   min-width: 320px;
+  @media (max-width: 351px) {
+    max-width: 255px;
+    min-width: 166px;
+    height: 114px;
+  }
 }
 .slider-button:hover {
   background-color: #0056b3;

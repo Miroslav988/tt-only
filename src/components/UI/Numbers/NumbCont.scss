@@ -10,6 +10,16 @@
   font-weight: 700;
   align-items: center;
   pointer-events: none;
+  @media (max-width: 351px) {
+    width: fit-content;
+    font-size: 56px;
+    height: 73px;
+    gap: 28px;
+    top: 0;
+    left: 20px;
+    padding-bottom: 58px;
+    border-bottom: 1px solid #c7cdd9;
+  }
 }
 .leftNumb {
   letter-spacing: -0.02em;
