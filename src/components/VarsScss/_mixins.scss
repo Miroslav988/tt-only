@@ -1,6 +1,12 @@
 @mixin flex-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 
@@ -8,9 +14,10 @@
   position: absolute;
   top: 50%;
   left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-
 @mixin mobile {
   @media (max-width: $mobile-breakpoint) {
     @content;
@@ -18,5 +25,7 @@
 }
 
 @mixin gradient-line {
+  background: -webkit-linear-gradient(top, $accent-blue -5%, $accent-pink 85%);
+  background: -o-linear-gradient(top, $accent-blue -5%, $accent-pink 85%);
   background: linear-gradient(180deg, $accent-blue -5%, $accent-pink 85%);
 }
